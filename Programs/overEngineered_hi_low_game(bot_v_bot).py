@@ -70,7 +70,7 @@ class Host(object):
 
 try:
 	#theRange = int(input("Hey Spectator, Input the range for our game: "))
-	theRange = 1253
+	theRange = 100000
 except:
 	print("Thats not a proper number!")
 
