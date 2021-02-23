@@ -1,7 +1,6 @@
 # msg = "Pm ol ohk hufaopun jvumpkluaphs av zhf ol dyval pa pu jpwoly aoha pz if zv johunpun aol vykly vm aol slaalyz vm aol hswohila aoha uva h dvyk jvbsk il thkl vba"
 # msg ="Kh jg jcf cpavjkpi eqphkfgpvkcn vq uca jg ytqvg kv kp ekrjgt vjcv ku da uq ejcpikpi vjg qtfgt qh vjg ngvvgtu qh vjg cnrjcdgv vjcv pqv c yqtf eqwnf dg ocfg qwv"
 msg = 'Kxvtja Kjv'
-msg = msg.split(" ")
 letters = [chr(b) for b in range(ord('a'), (ord('z')+1))]
 print(letters)
 greater = []
@@ -34,6 +33,7 @@ print('HELOOOOO!')
 
 def decrypt(msg,offset):
 	shift = 7-offset
+	msg = msg.split(" ")
 
 	dec = r""
 	for eachWord in msg:
@@ -51,5 +51,11 @@ def decrypt(msg,offset):
 				dec += newL
 		dec += " "
 	print(dec)
+
+def autodecrypt(msg):
+
+	for eachWord in msg:
+		for eachChar in eachWord:
+			pass
 
 decrypt(msg,9)
