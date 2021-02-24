@@ -54,8 +54,8 @@ def decrypt(msg,offset):
 
 def autodecrypt(msg):
 
-	for eachWord in msg:
-		for eachChar in eachWord:
-			pass
+	for eachL in letters:
+		letterCount = msg.count(eachL)
+
 
 decrypt(msg,9)
