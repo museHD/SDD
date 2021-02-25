@@ -39,8 +39,6 @@ def decrypt(msg,offset):
 # Decrypts caeser ciphers using simple frequency analysis
 def autodecrypt(msg):
 
-	# /give @p minecraft:diamond_sword{Enchantments:[{id:sharpness,lvl:2000}]}
-
 	freq = []
 	# Go through all letters and store their frequency in the message in a list
 	for eachL in letters:
