@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+	<TITLE>Year 11 SDD</TITLE>
+	<STYLE></STYLE>
+</HEAD>
+<BODY>
+	<script>
+		var complaints = ["Stop That!", "Ay Bomkar", "Lmao Pat doesnt know how to do", "DUDE STOP CLICKING", "lmao dw pat <3", "OUCH STOP HURTING ME JEZUS CHRIST", "Stop being toxic", "basically a god at js"]
+		
+		function respond() {
+			// console.log(complaints.length)
+
+			document.getElementById('b1').innerHTML = complaints[Math.floor(Math.random() * complaints.length)];
+			// document.getElementById('b1'.style.color = "rgb(")
+		}
+	</script>
+	<button type="button" id="b1" onclick="respond()">Button 1</button>
+</BODY>
+</HTML>
