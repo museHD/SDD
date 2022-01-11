@@ -1,0 +1,49 @@
+BEGIN FindHighest(marks)
+	high = 0
+	num_of_good_students = 0
+	good_marks = [ ]
+	FOR i = 0 TO marks.length STEP 1
+		IF marks[i] > high
+			high = marks[i]
+		ENDIF
+		IF marks[i] > 90 THEN
+			num_of_good_students += 1
+			good_marks.append(marks[i])
+		ENDIF
+	NEXT i
+	print num_of_good_students
+	RETURN high
+END FindHighest
+
+
+
+
+BEGIN FindAvailableSeats(seats, required)
+	available = 0
+	FOR rows to 6 STEP 1
+		FOR cols to 4 STEP 1
+			IF seats[rows][cols] == FALSE THEN
+				available += 1
+			ENDIF
+		NEXT cols
+	NEXT rows
+	RETURN available >= required 
+
+ 
+
+
+
+BEGIN FindAvailableSeats(seats, required)
+	available = 0
+	FOR rows to 6 STEP 1
+		thiscol = 0
+		FOR cols to 4 STEP 1
+			IF seats[rows][cols] == FALSE THEN
+				thiscol += 1
+			ENDIF
+		available += 2-thiscol
+		NEXT cols
+	NEXT rows
+	RETURN available>= required 
+
+ END FindAvailableSeats

@@ -5,16 +5,254 @@
 	<STYLE></STYLE>
 </HEAD>
 <BODY>
-	<script>
-		var complaints = ["Stop That!", "Ay Bomkar", "Lmao Pat doesnt know how to do", "DUDE STOP CLICKING", "lmao dw pat <3", "OUCH STOP HURTING ME JEZUS CHRIST", "Stop being toxic", "basically a god at js"]
-		
-		function respond() {
-			// console.log(complaints.length)
+	<div id="d1">
+		<h1>First Task</h1>
+		<script>
+			var complaints = ["Stop That!", "Ay Bomkar", "Lmao Pat doesnt know how to do", "DUDE STOP CLICKING", "lmao dw pat <3", "OUCH STOP HURTING ME JEZUS CHRIST", "Stop being toxic", "basically a god at js"]
+			
+			function respond() {
+				// console.log(complaints.length)
 
-			document.getElementById('b1').innerHTML = complaints[Math.floor(Math.random() * complaints.length)];
-			// document.getElementById('b1'.style.color = "rgb(")
+				document.getElementById('b1').innerHTML = complaints[Math.floor(Math.random() * complaints.length)];
+				// document.getElementById('b1'.style.color = "rgb(")
+			}
+		</script>
+		<button type="button" id="b1" onclick="respond()">Button 1</button>
+	</div>
+
+	
+	<h1>Second Task</h1>
+	<div id="d2">
+		
+	<style>
+		#d2
+		{
+		background-color: rgb(0,0,0);
+		padding: 10%
 		}
+	</style>
+
+		<script>
+			function respond(argument) {
+				var thisDiv = document.getElementById('d2');
+				// console.log(thisDiv)
+				var red = document.getElementById('redRange').value;
+				var green = document.getElementById('greenRange').value;
+				var blue = document.getElementById('blueRange').value;
+				// console.log(red)
+
+				color = `rgb(${red},${green},${blue})`;
+				// color = `rgb ${red}( + red + "," + green + "," + blue + ")".format();
+				thisDiv.style.backgroundColor = color;
+			}
+		</script>
+		<input type="range" id="redRange" value="128" min="1" max="255" oninput="respond()">
+		<input type="range" id="greenRange" value="128" min="1" max="255" oninput="respond()">
+		<input type="range" id="blueRange" value="128" min="1" max="255" oninput="respond()">
+
+	</div>
+
+
+	<h1>Third Task</h1>
+
+	<div>Skipped :P</div>
+
+
+	<h1>Fourth Task</h1>
+	<div id="d4">
+
+		<div id="battery">
+			<div id="status">
+				
+			</div>
+		</div>
+
+		<style>
+				#battery{
+					outline: black solid 10px;
+					/*background-color: white;*/
+					margin-right: 60%;
+					margin-left: 75px;
+				}
+
+				#status{
+					/*background-color: yellow;*/
+					width: 10%;
+					background: hsl(0,100%,100%);
+					padding-top:35%;
+				}
+
+/*				#tip{
+					margin-left: 80%;
+					margin-bottom: 25%;
+					margin-top: 25%
+
+				}
+*/
+		</style>
+
+		<script>
+			var thisDiv = document.getElementById('d4');
+			var charge = 0;
+			var battery = document.getElementById('battery');
+			var batterystatus = document.getElementById('status');
+			// console.log(battery)
+			// console.log(batterystatus)
+			var increase = true;
+			var increment = 0.25;
+			var newadd;
+
+			function updateBattery(){
+
+				if (charge == 0){
+					increase = true;
+				}
+				else if (charge == 100){
+					// console.log("mamamia")
+					increase = false;
+				}
+
+				if (increase == true){
+					newadd = increment
+					batterystatus.style.background = `hsl(${charge/100*120},100%,50%)`;
+
+				}
+				else if (increase == false){
+					newadd = -increment
+					batterystatus.style.background = `hsl(${charge/100*120},100%,50%)`;
+
+				}
+
+
+				
+				charge += newadd;
+				batterystatus.style.width = charge + '%';
+				requestAnimationFrame(updateBattery);
+			
+			}
+
+			frameref = requestAnimationFrame(updateBattery);
+		</script>
+<!-- 
+		<div id="battery">
+			<div id="status">
+				
+			</div>
+		</div> -->
+	</div>
+
+
+<h1>SheesH</h1>
+
+<div id="sheesh">
+	<p id="sh" onmousedown="sheesh()">SH</p>
+	<!-- <a href="" title="">Long press</a> -->
+
+	<script>
+		
+		function sheesh(){
+		
+		document.getElementById('sh').innerHTML += 'E'
+	}
+
+	var el = document.getElementById('sh');
+	el.addEventListener('long-press', function(e){
+	e.preventDefault();
+	
+	console.log(e.target);	
+	})
+
 	</script>
-	<button type="button" id="b1" onclick="respond()">Button 1</button>
+</div>
+
+<h1>Fifth Task</h1>
+<div id="d5">
+	<canvas id="canvas" width="600" height="600"></canvas>
+	<style>
+		#canvas{
+			background: grey;
+		}
+	</style>
+	<script>
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext("2d");
+		ctx.mozImageSmoothingEnabled    = true;
+		ctx.oImageSmoothingEnabled      = true;
+		ctx.webkitImageSmoothingEnabled = true;
+		ctx.msImageSmoothingEnabled     = true;
+		ctx.imageSmoothingEnabled       = true;
+	
+		function eqn(x){
+			var val = parseFloat(x*x + 5);
+			return val
+		}
+
+		function draw(){
+
+			ctx.fillStyle = "#F0FF0F";
+			ctx.lineCap = 'round';
+			ctx.beginPath();
+			ctx.lineCap = 'round';
+			for (var i = -100; i <= 650; i++) {
+				var ypos = (eqn(i));
+				// console.log(i)
+				ctx.fillRect(300-i,600-ypos,1,1);
+				ctx.lineTo(300-i,600-ypos);
+				ctx.stroke();
+			}
+			ctx.closePath();
+
+		}
+
+		mylist = [(10,10),(50,50),(80,80)]
+		draw();
+
+		function ownDraw(pointList){
+			ctx.beginPath();
+			ctx.moveTo(20,20);
+			for (var i = pointList.length - 1; i >= 0; i--) {
+				var point = pointList[i]
+				var pointx = point[0]
+				var pointy = point[1]
+		
+				ctx.lineTo(pointx, pointy);
+				ctx.fillRect(300-i,600-pointy,1,1);
+
+			}
+			ctx.closePath();
+			ctx.stroke();
+			ctx.fill();
+		}
+
+		ownDraw(mylist);
+	</script>
+</div>
+
+
+<h1>Sixth Task</h1>
+<div id="d6">
+	<canvas id="c6" width="500" height="500" style="background-color: lightgrey"></canvas>
+	<script>
+		var	canvas = document.getElementById("c6");
+		var ctx = canvas.getContext("2d");
+		document.addEventListener("mousedown", mouseClick);
+		document.addEventListener("")
+
+		function mouseClick(e) {
+			console.log(e);
+			x = e.layerX;
+			y = e.layerY;
+			console.log(x,y);
+			draw(x,y);
+		}
+
+		function draw(x,y) {
+			ctx.fillRect(x, y, 50, 50);
+		}
+
+
+	</script>
+
+</div>
 </BODY>
 </HTML>
